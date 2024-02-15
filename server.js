@@ -13,7 +13,7 @@ let authenticatedSockets = [];
 
 console.log(password);
 
-const FPS = 1;
+const FPS = 7;
 
 function generatePassword(len) {
     const letters = "abcdefghijklnmopqrstuvwxyz1234567890";
@@ -110,16 +110,16 @@ io.on("connection", (socket) => {
         });
 
         //start a C++ executable which will press keys
-        // exec(`cd libs & KeyPressJSLib.exe ${key.code}`, (err, stdout, stderr) => {
-        //     if (err) {
-        //         console.error(err);
-        //         return;
-        //     }
-        //     if (stderr) {
-        //         console.log(stderr);
-        //         return;
-        //     }
-        // })
+        exec(`cd libs & KeyPressJSLib.exe ${key.code}`, (err, stdout, stderr) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            if (stderr) {
+                console.log(stderr);
+                return;
+            }
+        })
     })
 
 })
