@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Guacamole</title>
+    <script src="socket.io.js"></script>
+    <style>
+        #image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        #ping-display {
+            z-index: 1000;
+            position: fixed;
+            color: white;
+            font-weight: bold;
+            font-family: sans-serif;
+            top: 10px;
+            left: 10px;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <p id="ping-display">PING: 0</p>
+    <img src="" id="image" draggable="false"/>
+    <script src="client.js"></script>
+</body>
+</html>
